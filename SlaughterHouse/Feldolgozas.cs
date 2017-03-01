@@ -1,8 +1,11 @@
-﻿namespace SlaughterHouse
+﻿using System.Collections.Generic;
+
+namespace SlaughterHouse
+
 {
     internal class Feldolgozas
     {
-        public delegate string FeldolgozasiModszer();
+        public delegate void FeldolgozasiModszer(List<part> fridge);
 
         private Breed milyenFajta;
         public FeldolgozasiModszer Modszer { get; set; }
@@ -20,9 +23,9 @@
         /// </summary>
         /// <param name="allat"></param>
         /// <param name="feldmod"></param>
-        public Feldolgozas(Animal allat, FeldolgozasiModszer feldmod)
+        public Feldolgozas(Breed fajta, FeldolgozasiModszer feldmod)
         {
-            milyenFajta = allat.Breed;
+            milyenFajta = fajta;
             Modszer = feldmod;
         }
 

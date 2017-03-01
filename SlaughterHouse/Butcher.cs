@@ -14,6 +14,7 @@ namespace SlaughterHouse
         public Butcher(IList<Animal> allatok)
         {
             Feldolgozasok = new List<Feldolgozas>();
+            Feldolgozasok.Add(new Feldolgozas(Breed.Cow, CowDisassembly));
             foreach (Animal item in allatok)
             {
                 item.AddListener(this);
@@ -27,6 +28,7 @@ namespace SlaughterHouse
                 if (item.MilyenFajta == e.milyenfajta)
                 {
                     Console.WriteLine("bazdmeg");
+                    //item.Modszer();
                 }
             }
 
