@@ -15,6 +15,16 @@ namespace SlaughterHouse
         public Form1()
         {
             InitializeComponent();
+            
+            Simulator vagohid = new Simulator(20);
+
+            dGAnimals.DataSource = vagohid.Allatoklistaja;
+
+        }
+
+        private void animalBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
