@@ -7,6 +7,19 @@
         parttype partName;
         int quantity;
 
+        public parttype PartName
+        {
+            get
+            {
+                return partName;
+            }
+
+            set
+            {
+                partName = value;
+            }
+        }
+
         public int Quantity
         {
             get
@@ -20,17 +33,6 @@
             }
         }
 
-        internal parttype PartName
-        {
-            get
-            {
-                return partName;
-            }
 
-            set
-            {
-                partName = value;
-            }
-        }
     }
 }

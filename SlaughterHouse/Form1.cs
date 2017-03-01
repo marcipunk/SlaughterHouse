@@ -19,6 +19,7 @@ namespace SlaughterHouse
             Simulator vagohid = new Simulator(20);
 
             dGAnimals.DataSource = vagohid.Allatoklistaja;
+            dGPart.DataSource = vagohid.Parts;
 
         }
 

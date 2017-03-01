@@ -22,14 +22,28 @@ namespace SlaughterHouse
                 return allatoklistaja;
             }
 
-            private set
+            set
             {
                 allatoklistaja = value;
             }
         }
 
+        internal IList<part> Parts
+        {
+            get
+            {
+                return parts;
+            }
+
+            private set
+            {
+                parts = value;
+            }
+        }
+
         public Simulator(int db)
         {
+            
 
             parts = new BindingList<part>();
             foreach (parttype item in Enum.GetValues(typeof(parttype)))
@@ -60,6 +74,21 @@ namespace SlaughterHouse
                         break;
                 }
             }
+
+            Butcher hentes = new Butcher(allatoklistaja);
+
+
+            for (int j = 0; j < 50; j++)
+            {
+                for (int i = 0; i < allatoklistaja.Count; i++)
+                {
+                    Feed(allatoklistaja[i]);
+                } 
+            }
+          
+
+
+
         }
 
         public void Feed (IEat allat)

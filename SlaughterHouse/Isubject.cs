@@ -1,4 +1,8 @@
-﻿namespace SlaughterHouse
+﻿
+
+namespace SlaughterHouse
+
+
 {
     internal interface Isubject
     {

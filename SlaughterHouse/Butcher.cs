@@ -11,7 +11,7 @@ namespace SlaughterHouse
     {
         IList<Feldolgozas> Feldolgozasok;
 
-        public Butcher(List<Animal> allatok)
+        public Butcher(IList<Animal> allatok)
         {
             Feldolgozasok = new List<Feldolgozas>();
             foreach (Animal item in allatok)
@@ -26,9 +26,11 @@ namespace SlaughterHouse
             {
                 if (item.MilyenFajta == e.milyenfajta)
                 {
-
+                    Console.WriteLine("bazdmeg");
                 }
             }
+
+            
         }
 
         public void CowDisassembly(List<part> fridge)
