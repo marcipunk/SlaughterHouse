@@ -11,12 +11,12 @@ namespace SlaughterHouse
     class Simulator : IListener
     {
         //private IList<part> parts;
-        public IList<Animal> allatoklistaja;
+        public BindingList<Animal> allatoklistaja;
         Random rnd;
         int allatindex;
         public Butcher hentes;
 
-        public IList<Animal> Allatoklistaja
+        public BindingList<Animal> Allatoklistaja
         {
             get
             {
@@ -58,7 +58,7 @@ namespace SlaughterHouse
         public Simulator(int db, SlaughterForm sf)
         {
 
-            allatoklistaja = new List<Animal>();
+            allatoklistaja = new BindingList<Animal>();
 
             rnd = new Random();
 
