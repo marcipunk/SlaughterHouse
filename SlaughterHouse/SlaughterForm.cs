@@ -37,6 +37,7 @@ namespace SlaughterHouse
         private void btStart_Click(object sender, EventArgs e)
         {
             vagohid.STARTFeed();
+            dGPart.DataSource = vagohid.Hentes.ButcherFridge;
         }
     }
 }
