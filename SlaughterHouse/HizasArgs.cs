@@ -5,12 +5,15 @@ namespace SlaughterHouse
     public class HizasArgs : EventArgs
     {
 
-        public Breed milyenfajta;
+        public Animal konkretAllat;
 
-        public HizasArgs(Breed fajta)
+
+        public HizasArgs(Animal konkretAllat)
         {
-            this.milyenfajta = fajta;
+            this.konkretAllat = konkretAllat;
         }
+
+
 
         //internal Animal allat
         //{

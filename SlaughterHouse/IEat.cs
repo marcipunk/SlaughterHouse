@@ -1,6 +1,6 @@
 ﻿namespace SlaughterHouse
 {
-    internal interface IEat
+    public interface IEat
     {
         void Eszik(double menny);
     }

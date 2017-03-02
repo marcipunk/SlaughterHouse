@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SlaughterHouse
 { public enum Breed { Cow, Chicken, Rabbit}
 
-    abstract class Animal : IEat, Isubject
+    public abstract class Animal : IEat, Isubject
     {
         protected int code;
         protected Breed fajta;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SlaughterHouse
 {
-    interface IListener
+    public interface IListener
     {
         void ElerteASulyt(HizasArgs e);
     }

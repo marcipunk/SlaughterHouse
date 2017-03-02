@@ -12,20 +12,31 @@ namespace SlaughterHouse
 {
     public partial class SlaughterForm : Form
     {
+        Simulator vagohid;
+
         public SlaughterForm()
         {
             InitializeComponent();
-            
-            Simulator vagohid = new Simulator(20);
-
-            dGAnimals.DataSource = vagohid.Allatoklistaja;
-            dGPart.DataSource = vagohid.Parts;
 
         }
 
         private void animalBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SlaughterForm_Shown(object sender, EventArgs e)
+        {
+            vagohid = new Simulator(20, this);
+
+            dGAnimals.DataSource = vagohid.Allatoklistaja;
+            dGPart.DataSource = vagohid.Hentes.ButcherFridge;
+            System.Diagnostics.Debug.Print("hello");
+        }
+
+        private void btStart_Click(object sender, EventArgs e)
+        {
+            vagohid.STARTFeed();
         }
     }
 }

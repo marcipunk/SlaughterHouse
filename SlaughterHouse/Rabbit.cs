@@ -23,7 +23,7 @@ namespace SlaughterHouse
 
         protected override void ElerteAVagosulyt()
         {
-            Notify(new HizasArgs(Breed.Rabbit));
+            Notify(new HizasArgs(this));
         }
     }
 }

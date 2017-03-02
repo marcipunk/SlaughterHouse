@@ -8,14 +8,15 @@ using System.ComponentModel;
 
 namespace SlaughterHouse
 {
-    class Simulator
+    class Simulator : IListener
     {
-        private IList<part> parts;
+        //private IList<part> parts;
         public IList<Animal> allatoklistaja;
         Random rnd;
         int allatindex;
+        public Butcher hentes;
 
-        public  IList<Animal> Allatoklistaja
+        public IList<Animal> Allatoklistaja
         {
             get
             {
@@ -28,31 +29,34 @@ namespace SlaughterHouse
             }
         }
 
-        internal IList<part> Parts
+        //internal IList<part> Parts
+        //{
+        //    get
+        //    {
+        //        return parts;
+        //    }
+
+        //    private set
+        //    {
+        //        parts = value;
+        //    }
+        //}
+
+        public Butcher Hentes
         {
             get
             {
-                return parts;
+                return hentes;
             }
 
-            private set
+            set
             {
-                parts = value;
+                hentes = value;
             }
         }
 
-        public Simulator(int db)
+        public Simulator(int db, SlaughterForm sf)
         {
-            
-
-            parts = new BindingList<part>();
-            foreach (parttype item in Enum.GetValues(typeof(parttype)))
-            {
-                parts.Add(new part());
-                parts[parts.Count - 1].PartName = item;
-                parts[parts.Count - 1].Quantity = 0;
-
-            }
 
             allatoklistaja = new List<Animal>();
 
@@ -75,23 +79,30 @@ namespace SlaughterHouse
                 }
             }
 
-            Butcher hentes = new Butcher(allatoklistaja);
+            hentes = new Butcher(allatoklistaja, sf);
+            Hentes.AddListener(this);
 
-
-            for (int j = 0; j < 50; j++)
-            {
-                for (int i = 0; i < allatoklistaja.Count; i++)
-                {
-                    Feed(allatoklistaja[i]);
-                } 
-            }
-          
-
-
+            //STARTFeed();
 
         }
 
-        public void Feed (IEat allat)
+
+            public void STARTFeed()
+            { 
+                for (int j = 0; j < 50; j++)
+                {
+                    for (int i = 0; i < allatoklistaja.Count; i++)
+                    {
+                        Feed(allatoklistaja[i]);
+                    }
+                }
+            }
+
+
+
+
+
+        private void Feed (IEat allat)
         {
             int mennyit;
             if (allat is Cow)
@@ -111,7 +122,16 @@ namespace SlaughterHouse
 
         }
 
-
-
+        public void ElerteASulyt(HizasArgs e)
+        {
+            foreach (Animal item in allatoklistaja)
+            {
+                if (item == e.konkretAllat)
+                {
+                    allatoklistaja.Remove(item);
+                    break;
+                }
+            }
+        }
     }
 }
