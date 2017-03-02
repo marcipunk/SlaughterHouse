@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SlaughterHouse
 {
-    public partial class Form1 : Form
+    public partial class SlaughterForm : Form
     {
-        public Form1()
+        public SlaughterForm()
         {
             InitializeComponent();
             

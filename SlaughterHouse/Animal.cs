@@ -62,14 +62,14 @@ namespace SlaughterHouse
 
         private void Hizik(double kg)
         {
-          weight+=kg;
+          Math.Round((weight+=kg), 2);
         }
 
         protected Animal(int code, Breed fajta, double kezdosuly)
         {
             this.code = code;
             this.fajta = fajta;
-            this.weight = kezdosuly;
+            this.weight = Math.Round(kezdosuly, 2);
 
             listeners = new List<IListener>();
         }

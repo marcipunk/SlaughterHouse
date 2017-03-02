@@ -1,6 +1,6 @@
 ﻿namespace SlaughterHouse
 {
-    partial class Form1
+    partial class SlaughterForm
     {
         /// <summary>
         /// Required designer variable.

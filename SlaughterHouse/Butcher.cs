@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+
 namespace SlaughterHouse
 {
     class Butcher : IListener
@@ -27,7 +28,9 @@ namespace SlaughterHouse
             {
                 if (item.MilyenFajta == e.milyenfajta)
                 {
-                    Console.WriteLine("bazdmeg");
+                    //Console.WriteLine("bazdmeg");
+                    
+                    SlaughterForm.ActiveForm.BackColor = System.Drawing.Color.DarkBlue;
                     //item.Modszer();
                 }
             }

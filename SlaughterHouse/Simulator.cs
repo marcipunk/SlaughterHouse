@@ -11,11 +11,11 @@ namespace SlaughterHouse
     class Simulator
     {
         private IList<part> parts;
-        private IList<Animal> allatoklistaja;
+        public IList<Animal> allatoklistaja;
         Random rnd;
         int allatindex;
 
-        internal IList<Animal> Allatoklistaja
+        public  IList<Animal> Allatoklistaja
         {
             get
             {
